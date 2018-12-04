@@ -28,6 +28,7 @@ import{ServicioempService} from'./empresa/servicios/servicioemp.service';
 import{LoginEGuard} from'./empresa/login-e.guard';
 import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
+import { LoginUserComponent } from './Usuario2/login-user/login-user.component';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -50,6 +51,7 @@ const appRoutes:Routes=[
     HomeComponent,
     InicioComponent,
     ModalComponent,
+    LoginUserComponent,
   
   ],
   imports: [
