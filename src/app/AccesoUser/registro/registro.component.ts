@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 //servicio
-import { ServicioempService } from '../servicios/servicios/servicioemp.service';
+import { ServicioempService } from '../servicios/servicioemp.service';
 //
 import { NgForm } from '@angular/forms';
 //clase empresa
-import {Empresa  } from '../modelos/usuario';
+import {Empresa  } from '../modelos/empresa';
 
 @Component({
-  selector: 'app-registro-u',
-  templateUrl: './registro-u.component.html',
-  styleUrls: ['./registro-u.component.css']
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
 })
-export class RegistroUComponent implements OnInit {
+export class RegistroComponent implements OnInit {
   constructor(private servicioempService: ServicioempService) { }
 
   ngOnInit() {

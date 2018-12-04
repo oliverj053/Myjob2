@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import{ServicioempService} from '../servicios/servicios/servicioemp.service';
-import{Empresa} from '../modelos/usuario';
+import{ServicioempService} from '../servicios/servicioemp.service';
+import{Empresa} from '../modelos/empresa';
 import { Key } from 'protractor';
 import { Router } from '@angular/router';
 import { Command } from 'selenium-webdriver';
-
 @Component({
-  selector: 'app-login-u',
-  templateUrl: './login-u.component.html',
-  styleUrls: ['./login-u.component.css']
+  selector: 'app-login-e',
+  templateUrl: './login-e.component.html',
+  styleUrls: ['./login-e.component.css']
 })
-export class LoginUComponent implements OnInit {
+export class LoginEComponent implements OnInit {
 
- 
+  
   empresaList:Empresa[];
   resultado:any[];
   constructor(private servicioempService:ServicioempService,private router:Router) { }
@@ -44,5 +43,6 @@ export class LoginUComponent implements OnInit {
     
    
 }
+
 
 }
