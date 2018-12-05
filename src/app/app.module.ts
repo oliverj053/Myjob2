@@ -14,7 +14,7 @@ import { from } from 'rxjs';
 
 
 //Routings
-import { TrabajadorComponent } from './trabajador/trabajador.component';
+
 
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
@@ -60,8 +60,7 @@ const appRoutes:Routes=[
     AppComponent,
     LoginEComponent,
     RegistroComponent,
-    //TrabajadorComponent,
-    QuienesComponent,
+     QuienesComponent,
     HomeComponent,
     InicioComponent,
     ModalComponent,
