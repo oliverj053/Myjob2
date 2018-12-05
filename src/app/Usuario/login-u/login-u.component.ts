@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import{ServicioempService} from '../servicios/servicios/servicioemp.service';
-import{Empresa} from '../modelos/usuario';
+import{Empresa} from '../modelos-u/usuario-u';
 import { Key } from 'protractor';
 import { Router } from '@angular/router';
 import { Command } from 'selenium-webdriver';

@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { VacanteempleoService } from '../servicios/servicios/vacanteempleo.service';
-import { Vacante } from '../modelos/vacante';
+import { Vacante } from '../modelos-u/vacante-u';
 
-import{ModalComponent} from './modal/modal.component';
+import{ModalUComponent} from './modal-u/modal-u.component';
 import { NgForm } from '@angular/forms';
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-inicio-u',
+  templateUrl: './inicio-u.component.html',
+  styleUrls: ['./inicio-u.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioUComponent implements OnInit {
   vacanteList:Vacante [];
   constructor(private router:Router,private vacanteemppleoService: VacanteempleoService) { }
    ngOnInit() {
