@@ -14,7 +14,7 @@ import{AngularFireAuthModule}from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import { from } from 'rxjs';
 import {FormsModule} from '@angular/forms';
-import { TrabajadorComponent } from './trabajador/trabajador.component';
+//import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
 
@@ -29,8 +29,8 @@ import{ServicioempService} from'./empresa/servicios/servicioemp.service';
 import{LoginEGuard} from'./empresa/login-e.guard';
 import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
-import { LoginUserComponent } from './Usuario2/login-user/login-user.component';
-import { LoginUComponent } from './Usuario/login-u/login-u.component';
+//import { LoginUserComponent } from './Usuario2/login-user/login-user.component';
+//import { LoginUComponent } from './Usuario/login-u/login-u.component';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -41,8 +41,8 @@ const appRoutes:Routes=[
   {path:'inicio', component:InicioComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
-  {path:'login-u', component:LoginUComponent},
-  {path:'login-user', component:LoginUserComponent}
+ // {path:'login-u', component:LoginUComponent},
+  //{path:'login-user', component:LoginUserComponent}
 
 ];
 
@@ -51,12 +51,12 @@ const appRoutes:Routes=[
     AppComponent,
     LoginEComponent,
     RegistroComponent,
-    TrabajadorComponent,
+    //TrabajadorComponent,
     QuienesComponent,
     HomeComponent,
     InicioComponent,
-    ModalComponent,
-    LoginUserComponent,LoginUComponent,
+    ModalComponent
+   // LoginUserComponent,LoginUComponent,
   
   ],
   imports: [
