@@ -14,7 +14,8 @@ export class AppComponent {
 
   cerrarSesion(){
     localStorage.removeItem("email");
-    this.router.navigate(['/login-e']);
     this.btncerrarSesion=false;
+    this.router.navigate(['/login-e']);
+    
   }
 }
