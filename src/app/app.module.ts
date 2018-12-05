@@ -14,14 +14,13 @@ import{AngularFireAuthModule}from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import { from } from 'rxjs';
 import {FormsModule} from '@angular/forms';
-
+import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './empresa/inicio/inicio.component';
-
 //servicios
 import{ServicioempService} from'./empresa/servicios/servicioemp.service';
 
@@ -29,15 +28,8 @@ import{ServicioempService} from'./empresa/servicios/servicioemp.service';
 import{LoginEGuard} from'./empresa/login-e.guard';
 import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
-
-
-///imports del usuario 
+import { LoginUserComponent } from './Usuario2/login-user/login-user.component';
 import { LoginUComponent } from './Usuario/login-u/login-u.component';
-import { RegistroUComponent } from './Usuario/registro-u/registro-u.component';
-import { InicioUComponent } from './Usuario/inicio/inicio-u.component';
-import { ModalUComponent } from './Usuario/inicio/modal-u/modal-u.component';
-import { LoginUGuard } from './Usuario/login-u.guard';
-import { NologinUGuard } from './Usuario/nologin-u.guard';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -49,10 +41,8 @@ const appRoutes:Routes=[
   {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
-  ///parte del usuario
   {path:'login-u', component:LoginUComponent},
-  {path:'registro-u', component:RegistroUComponent},
-  {path:'inicio-u', component:InicioUComponent,canActivate:[LoginUGuard]}
+  {path:'login-user', component:LoginUserComponent}
 
 ];
 
@@ -61,13 +51,12 @@ const appRoutes:Routes=[
     AppComponent,
     LoginEComponent,
     RegistroComponent,
-    RegistroUComponent,
+    TrabajadorComponent,
     QuienesComponent,
     HomeComponent,
     InicioComponent,
     ModalComponent,
-    LoginUComponent,
-    InicioUComponent
+    LoginUserComponent,LoginUComponent,
   
   ],
   imports: [
@@ -77,7 +66,7 @@ const appRoutes:Routes=[
     AngularFireDatabaseModule,AngularFireAuthModule,FormsModule,AlertModule.forRoot(),
     NgbModule
   ],
-  providers: [ServicioempService,LoginEGuard,NologinEGuard,LoginUGuard,NologinUGuard],
+  providers: [ServicioempService,LoginEGuard,NologinEGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,16 +4,16 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { VacanteempleoService } from '../../servicios/servicios/vacanteempleo.service';
 //
 import { NgForm } from '@angular/forms';
-import { Vacante } from '../../modelos-u/vacante-u';
+import { Vacante } from '../../modelos/vacante';
 
 
 
 @Component({
-  selector: 'app-modal-u',
-  templateUrl: './modal-u.component.html',
-  styleUrls: ['./modal-u.component.css']
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
-export class ModalUComponent implements OnInit {
+export class ModalComponent implements OnInit {
 
   closeResult: string;
 

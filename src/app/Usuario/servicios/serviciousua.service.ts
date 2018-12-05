@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 //firebase
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 //clase empresa
-import { Empresa} from '../modelos-u/usuario-u';
+import { Empresa} from '../modelos/usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,7 @@ selecEmp: Empresa =new Empresa();
   constructor(private firebase: AngularFireDatabase) { }
 
   getProducts() {
-    return this.empresaList = this.firebase.list('usuario-u');
+    return this.empresaList = this.firebase.list('empresa');
   }
 
   insertarEmpresa(empresa:Empresa){

@@ -4,7 +4,7 @@ import { ServicioempService } from '../servicios/servicios/servicioemp.service';
 //
 import { NgForm } from '@angular/forms';
 //clase empresa
-import {Empresa  } from '../modelos-u/usuario-u';
+import {Empresa  } from '../modelos/usuario';
 
 @Component({
   selector: 'app-registro-u',

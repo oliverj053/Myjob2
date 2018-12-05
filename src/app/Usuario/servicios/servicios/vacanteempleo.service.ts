@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 //firebase
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 //clase vacante
-import { Vacante} from '../../modelos-u/vacante-u';
+import { Vacante} from '../../modelos/vacante';
 @Injectable({
   providedIn: 'root'
 })
