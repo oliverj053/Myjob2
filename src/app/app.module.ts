@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginEComponent } from './empresa/login-e/login-e.component';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistroComponent } from './empresa/registro/registro.component';
+import {FormsModule} from '@angular/forms';
 
 //Firebase
 import {AngularFireModule}from 'angularfire2'; 
@@ -13,24 +11,33 @@ import {AngularFireDatabaseModule}from 'angularfire2/database';
 import{AngularFireAuthModule}from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import { from } from 'rxjs';
-import {FormsModule} from '@angular/forms';
+
+
+//Routings
 import { TrabajadorComponent } from './trabajador/trabajador.component';
+
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
-
-import { AlertModule } from 'ngx-bootstrap';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginEComponent } from './empresa/login-e/login-e.component';
+import { RegistroComponent } from './empresa/registro/registro.component';
 import { InicioComponent } from './empresa/inicio/inicio.component';
-//servicios
-import{ServicioempService} from'./empresa/servicios/servicioemp.service';
-
-//guards
-import{LoginEGuard} from'./empresa/login-e.guard';
-import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
 import { LoginUComponent } from './usuario/login-u/login-u.component';
 import { RegistroUComponent } from './usuario/registro-u/registro-u.component';
 import { InicioUComponent } from './usuario/inicio-u/inicio-u.component';
+
+import { AlertModule } from 'ngx-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//servicios
+import{ServicioempService} from'./empresa/servicios/servicioemp.service';
+import{EmpleadoService}from'./Usuario/servicios/empleado.service';
+
+//guards
+import{LoginEGuard} from'./empresa/login-e.guard';
+import{NologinEGuard} from'./empresa/nologin-e.guard';
+import{LoginUGuard}from'./Usuario/control/login-u.guard';
+import{NologinUGuard}from'./Usuario/control/nologin-u.guard';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -42,9 +49,9 @@ const appRoutes:Routes=[
   {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
-  {path:'login-u', component:LoginUComponent},
+  {path:'login-u', component:LoginUComponent,canActivate:[NologinEGuard]},
   {path:'registro-u', component:RegistroUComponent},
-  {path:'inicio-u', component:InicioUComponent}
+  {path:'inicio-u', component:InicioUComponent,canActivate:[LoginUGuard]}
   
 ];
 
@@ -70,7 +77,7 @@ const appRoutes:Routes=[
     AngularFireDatabaseModule,AngularFireAuthModule,FormsModule,AlertModule.forRoot(),
     NgbModule
   ],
-  providers: [ServicioempService,LoginEGuard,NologinEGuard],
+  providers: [ServicioempService,LoginEGuard,NologinEGuard,LoginUGuard,NologinUGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

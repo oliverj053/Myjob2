@@ -6,6 +6,8 @@ import{Empresa} from '../modelos/empresa';
 import { Key } from 'protractor';
 import { Router } from '@angular/router';
 import { Command } from 'selenium-webdriver';
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+
 @Component({
   selector: 'app-login-e',
   templateUrl: './login-e.component.html',
@@ -26,7 +28,7 @@ export class LoginEComponent implements OnInit {
         this.empresaList=empresa;
       }
     );
-  }
+    }
   
   login(form:NgForm){
     //console.log(form.value);
@@ -36,9 +38,11 @@ export class LoginEComponent implements OnInit {
     if(this.resultado[0]==null){
     alert('Ingresa todos tus datos');}
     else{
+      
       console.log(this.resultado[0]);
       this.router.navigate(['/inicio']);
       localStorage.setItem('email',form.value.correo);
+      localStorage.setItem('tipoUsuario',"dos");
     }
     
    

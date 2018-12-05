@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'myjob';  
 
-  constructor(private router:Router){}
+  constructor(private router:Router){
+    this.router.navigate(['/home']);
+  }
   btncerrarSesion=false;
 
   cerrarSesion(){

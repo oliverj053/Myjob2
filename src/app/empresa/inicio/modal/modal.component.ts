@@ -5,10 +5,7 @@ import { VacanteempleoService } from '../../servicios/vacanteempleo.service';
 //
 import { NgForm } from '@angular/forms';
 import { Vacante } from '../../modelos/vacante';
-import { Router } from '@angular/router';
-
-
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',

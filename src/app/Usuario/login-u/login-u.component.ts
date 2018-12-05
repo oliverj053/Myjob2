@@ -41,6 +41,7 @@ export class LoginUComponent implements OnInit {
       console.log(this.resultado[0]);
       this.router.navigate(['/inicio-u']);
       localStorage.setItem('email', form.value.correo);
+      localStorage.setItem('tipoUsuario', "tres");
     }
 
 
