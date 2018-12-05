@@ -28,6 +28,9 @@ import{ServicioempService} from'./empresa/servicios/servicioemp.service';
 import{LoginEGuard} from'./empresa/login-e.guard';
 import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
+import { LoginUComponent } from './usuario/login-u/login-u.component';
+import { RegistroUComponent } from './usuario/registro-u/registro-u.component';
+import { InicioUComponent } from './usuario/inicio-u/inicio-u.component';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -38,7 +41,11 @@ const appRoutes:Routes=[
   {path:'inicio', component:InicioComponent,canActivate:[LoginEGuard]},
   {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
-  {path:'home', component:HomeComponent}
+  {path:'home', component:HomeComponent},
+  {path:'login-u', component:LoginUComponent},
+  {path:'registro-u', component:RegistroUComponent},
+  {path:'inicio-u', component:InicioUComponent}
+  
 ];
 
 @NgModule({
@@ -51,6 +58,9 @@ const appRoutes:Routes=[
     HomeComponent,
     InicioComponent,
     ModalComponent,
+    LoginUComponent,
+    RegistroUComponent,
+    InicioUComponent,
   
   ],
   imports: [

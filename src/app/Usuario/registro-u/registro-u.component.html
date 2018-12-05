@@ -1,0 +1,87 @@
+<body class="text-center" style="background: url(https://images.pond5.com/business-background-skyscrapers-and-running-footage-011463753_prevstill.jpeg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 100%;width: 100% ;">
+  <form class="form-signin" #formEmpresa="ngForm" (ngSubmit)="onSubmit(formEmpresa)">
+    <div class="container jumbotron" style="background-color: rgba(252, 252, 252, 0.5)">
+      <div>
+      <img src="https://cdn.icon-icons.com/icons2/1169/PNG/512/1489186737-constructiondigshovelworker_81809.png" width="80"
+        height="80" class="d-inline-block align-top" alt="">
+      <h1 class="h3 mb-3 font-weight-normal">Nuevo Usuario</h1>
+      <input type="hidden" name="id" #id="ngModel" [(ngModel)]="empleadoService.selecUsuario.id">
+      
+      <input type="text" 
+          class="form-control" 
+          name="nombre" 
+          #nombre ="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.nombre" 
+          placeholder="Nombre De Usuario">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="apellidos" 
+          #apellidos ="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.apellidos" 
+          placeholder="Apellido(s)">
+          <br>
+      <input type="text" 
+          class="form-control" 
+          name="rfc" 
+          #rfc ="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.rfc" 
+          placeholder="RFC">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="correo" 
+          #correo="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.correo" 
+          placeholder="Correo Electrónico">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="contrasenia" 
+          #contrasenia="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.contrasenia" 
+          placeholder="Contraseña">
+          <br>
+          <input type="number" 
+          class="form-control" 
+          name="telefono" 
+          #telefono="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.telefono" 
+          placeholder="Teléfono">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="direccion" 
+          #direccion="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.direccion" 
+          placeholder="Dirección">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="profesion" 
+          #profesion="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.profesion" 
+          placeholder="Profesion">
+          <br>
+          <input type="text" 
+          class="form-control" 
+          name="gradoEstudio" 
+          #gradoEstudio="ngModel" 
+          [(ngModel)]="empleadoService.selecUsuario.gradoEstudio" 
+          placeholder="Grado De Estudio">
+          <br>
+      <button class="btn btn-primary btn-block" ype="submit">Crear Cuenta</button>
+      <br>
+      <button class="btn btn-secondary btn-block" type="reset" (click)="limpiarFormulario(formEmpresa )">
+        <i class="fas fa-sync-alt"> Limpiar </i>
+      </button>
+      <hr>
+    
+      <div class="form-group">
+        <h6>¿Ya tienes cuenta?<a routerLink="/login-u"> Inicia Sesión</a></h6>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; MyJob 2018</p>
+      </div>
+    </div>
+  </form>
+</body>
