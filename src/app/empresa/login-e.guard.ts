@@ -16,6 +16,6 @@ export class LoginEGuard implements CanActivate {
         return false;
       } else if (localStorage.getItem("email")!=null && localStorage.getItem("tipoUsuario")=="dos"){
         return true;
-      
+      }
   }
 }
