@@ -18,6 +18,7 @@ import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
 
+
 import { AlertModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './empresa/inicio/inicio.component';
@@ -29,6 +30,7 @@ import{LoginEGuard} from'./empresa/login-e.guard';
 import{NologinEGuard} from'./empresa/nologin-e.guard';
 import { ModalComponent } from './empresa/inicio/modal/modal.component';
 import { LoginUserComponent } from './Usuario2/login-user/login-user.component';
+import { LoginUComponent } from './Usuario/login-u/login-u.component';
 ////////////////////
 
 //arreglo que va a contener los enlaces a mostrar
@@ -38,7 +40,10 @@ const appRoutes:Routes=[
   {path:'registro', component:RegistroComponent},
   {path:'inicio', component:InicioComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
-  {path:'home', component:HomeComponent}
+  {path:'home', component:HomeComponent},
+  {path:'login-u', component:LoginUComponent},
+  {path:'login-user', component:LoginUserComponent}
+
 ];
 
 @NgModule({
@@ -51,7 +56,7 @@ const appRoutes:Routes=[
     HomeComponent,
     InicioComponent,
     ModalComponent,
-    LoginUserComponent,
+    LoginUserComponent,LoginUComponent,
   
   ],
   imports: [

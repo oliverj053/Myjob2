@@ -42,7 +42,7 @@ export class LoginUComponent implements OnInit {
       localStorage.setItem('email',form.value.correo);
     }
     
-   
+
 }
 
 }
