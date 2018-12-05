@@ -18,6 +18,7 @@ import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
 
+
 import { AlertModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './empresa/inicio/inicio.component';
@@ -38,7 +39,6 @@ const appRoutes:Routes=[
   {path:'login-e',component:LoginEComponent,canActivate:[NologinEGuard]},
   {path:'registro', component:RegistroComponent},
   {path:'inicio', component:InicioComponent,canActivate:[LoginEGuard]},
-  {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
   {path:'login-u', component:LoginUComponent},
