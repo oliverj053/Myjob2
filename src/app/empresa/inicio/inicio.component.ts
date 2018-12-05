@@ -6,8 +6,6 @@ import { Vacante } from '../modelos/vacante';
 
 import{ModalComponent} from './modal/modal.component';
 import { NgForm } from '@angular/forms';
-
-import{AppComponent}from'../../app.component';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -15,7 +13,7 @@ import{AppComponent}from'../../app.component';
 })
 export class InicioComponent implements OnInit {
   vacanteList:Vacante [];
-  constructor(private router:Router,private vacanteemppleoService: VacanteempleoService,private appComponent:AppComponent ) { }
+  constructor(private router:Router,private vacanteemppleoService: VacanteempleoService) { }
    ngOnInit() {
     this.vacanteemppleoService.getProducts()
     .snapshotChanges() //meto para obtener todos los cambios de la base de datos
@@ -26,18 +24,17 @@ export class InicioComponent implements OnInit {
         x["id"]=element.key;
         this.vacanteList.push(x as Vacante);
       });
-    }); 
-    this.btnsesion();
-    
+    });
+
+    this.limpiarFormulario();
+  
   }
-    btnsesion(){
-      this.appComponent.btncerrarSesion=true;
-    }
+
 
   onEdit(vacante: Vacante){
-    this.router.navigate(['/modal']);
     this.vacanteemppleoService.vacantesel=Object.assign({},vacante);
-       
+ 
+    
     }
     
     onDelete(id: string){
@@ -46,11 +43,24 @@ export class InicioComponent implements OnInit {
     }
   }
 
-   /*cerrrarSesion(){
+   cerrrarSesion(){
     localStorage.removeItem("email");
     this.router.navigate(['/login-e']);
-    this.appComponent.btncerrarSesion=false;
-  }*/
+  }
 
+onSubmit(vacanteForm: NgForm) {
+  if (vacanteForm.value.id == null)
+    this.vacanteemppleoService.insertar(vacanteForm.value);
+  else
+    this.vacanteemppleoService.modificar(vacanteForm.value);
 
+  this.limpiarFormulario(vacanteForm);
+}
+
+limpiarFormulario(vacanteForm?: NgForm) {
+  if (vacanteForm != null) {
+    vacanteForm.reset();
+    this.vacanteemppleoService.vacantesel = new Vacante();
+  }
+}
 }

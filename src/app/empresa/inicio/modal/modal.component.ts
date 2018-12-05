@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit {
 
   closeResult: string;
 
-  constructor( private vacanteempleoService: VacanteempleoService, private router:Router) { }
+  constructor( private vacanteempleoService: VacanteempleoService) { }
 
   ngOnInit() {
     this.vacanteempleoService.getProducts();
@@ -29,7 +29,6 @@ export class ModalComponent implements OnInit {
       this.vacanteempleoService.modificar(vacanteForm.value);
 
     this.limpiarFormulario(vacanteForm);
-    this.router.navigate(['/inicio']);
   }
 
   limpiarFormulario(vacanteForm?: NgForm) {
