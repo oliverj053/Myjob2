@@ -5,7 +5,10 @@ import { VacanteempleoService } from '../../servicios/vacanteempleo.service';
 //
 import { NgForm } from '@angular/forms';
 import { Vacante } from '../../modelos/vacante';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+
+
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -15,7 +18,7 @@ export class ModalComponent implements OnInit {
 
   closeResult: string;
 
-  constructor( private vacanteempleoService: VacanteempleoService) { }
+  constructor( private vacanteempleoService: VacanteempleoService, private router:Router) { }
 
   ngOnInit() {
     this.vacanteempleoService.getProducts();
@@ -29,6 +32,7 @@ export class ModalComponent implements OnInit {
       this.vacanteempleoService.modificar(vacanteForm.value);
 
     this.limpiarFormulario(vacanteForm);
+    this.router.navigate(['/inicio']);
   }
 
   limpiarFormulario(vacanteForm?: NgForm) {
@@ -41,5 +45,4 @@ export class ModalComponent implements OnInit {
  
 
 }
-
 

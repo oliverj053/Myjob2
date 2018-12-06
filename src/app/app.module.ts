@@ -47,6 +47,7 @@ const appRoutes:Routes=[
   {path:'login-e',component:LoginEComponent,canActivate:[NologinEGuard]},
   {path:'registro', component:RegistroComponent},
   {path:'inicio', component:InicioComponent,canActivate:[LoginEGuard]},
+  {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
   {path:'login-u', component:LoginUComponent,canActivate:[NologinEGuard]},
