@@ -14,7 +14,7 @@ import { from } from 'rxjs';
 
 
 //Routings
-import { TrabajadorComponent } from './trabajador/trabajador.component';
+//import { TrabajadorComponent } from './trabajador/trabajador.component';
 
 import { QuienesComponent } from './quienes/quienes.component';
 import { HomeComponent } from './home/home.component';
