@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm,FormBuilder,FormGroup,Validator, Validators } from '@angular/forms';
 
 import{ServicioempService} from '../servicios/servicioemp.service';
 import{Empresa} from '../modelos/empresa';
@@ -12,11 +12,22 @@ import { Command } from 'selenium-webdriver';
   styleUrls: ['./login-e.component.css']
 })
 export class LoginEComponent implements OnInit {
-
-  
+frmAcceso: FormGroup;
   empresaList:Empresa[];
   resultado:any[];
-  constructor(private servicioempService:ServicioempService,private router:Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private servicioempService:ServicioempService,
+    private router:Router
+    
+    
+    ) { 
+this.frmAcceso= this.fb.group({
+  email:['',Validators.email],
+  password:['',Validators.minLength(10)]
+})
+
+    }
 
 
   ngOnInit() {
@@ -32,7 +43,9 @@ export class LoginEComponent implements OnInit {
     //console.log(form.value);
    //console.log(form.value);
    //console.log(this.empresaList);
-    this.resultado=this.empresaList.filter(empresa=>empresa.correo==form.value.correo &&empresa.contrasenia==form.value.contrasenia);
+    this.resultado=this.empresaList.filter
+    (empresa=>empresa.correo==form.value.correo 
+      &&empresa.contrasenia==form.value.contrasenia);
     if(this.resultado[0]==null){
     alert('Ingresa todos tus datos');}
     else{
