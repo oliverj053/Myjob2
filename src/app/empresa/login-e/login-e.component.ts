@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm,FormBuilder,FormGroup,Validator, Validators } from '@angular/forms';
+import { NgForm,Validator, Validators } from '@angular/forms';
 
 import{ServicioempService} from '../servicios/servicioemp.service';
 import{Empresa} from '../modelos/empresa';
@@ -14,20 +14,14 @@ import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
   styleUrls: ['./login-e.component.css']
 })
 export class LoginEComponent implements OnInit {
-frmAcceso: FormGroup;
+
   empresaList:Empresa[];
   resultado:any[];
   constructor(
-    private fb: FormBuilder,
+    
     private servicioempService:ServicioempService,
     private router:Router
-    
-    
     ) { 
-this.frmAcceso= this.fb.group({
-  email:['',Validators.email],
-  password:['',Validators.minLength(10)]
-})
 
     }
 
