@@ -1,0 +1,20 @@
+<div id="content" #content>
+    <h1>Oferta de empleo</h1>
+
+    La empresa: <h5>{{vacanteempleoService.vacantesel.nombreEmpresa}}</h5> solicita empleado(a) 
+    
+    <h5>{{vacanteempleoService.vacantesel.desEmpresa}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.nombreVacante}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.aptitudes}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.nivelEducativo}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.experiencia}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.sector}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.tipoEmpleo}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.funcionesLaborales}}</h5>
+    <h5>{{vacanteempleoService.vacantesel.descripcion}}</h5>
+
+</div>
+
+
+
+<button (click)=descargarPDF()>Generar PDF</button>

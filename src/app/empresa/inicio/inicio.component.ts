@@ -16,7 +16,8 @@ import{AppComponent}from'../../app.component';
 export class InicioComponent implements OnInit {
   vacanteList:Vacante [];
   constructor(private router:Router,private vacanteemppleoService: VacanteempleoService,private appComponent:AppComponent ) { }
-   ngOnInit() {
+   
+  ngOnInit() {
     this.vacanteemppleoService.getProducts()
     .snapshotChanges() //meto para obtener todos los cambios de la base de datos
     .subscribe(item=>{ //nos trae los datos guardados en la bd
@@ -48,6 +49,7 @@ export class InicioComponent implements OnInit {
 
    cerrrarSesion(){
     localStorage.removeItem("email");
+    localStorage.removeItem("tipoUsuario");
     this.router.navigate(['/login-e']);
     this.appComponent.btncerrarSesion=false;
   }

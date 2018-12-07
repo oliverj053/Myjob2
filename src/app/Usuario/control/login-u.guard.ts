@@ -13,9 +13,9 @@ constructor (private router:Router){}
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       
       if (localStorage.getItem("email")==null) {
-        this.router.navigate(['/login-u']);
-        return false;
-      } else if(localStorage.getItem("email")!=null && localStorage.getItem("tipoUsuario")=="tres"){
+         return false;
+         this.router.navigate(['/login-u']);
+      } else {
         return true;
       }
   }

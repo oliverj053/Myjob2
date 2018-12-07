@@ -25,6 +25,7 @@ import { ModalComponent } from './empresa/inicio/modal/modal.component';
 import { LoginUComponent } from './usuario/login-u/login-u.component';
 import { RegistroUComponent } from './usuario/registro-u/registro-u.component';
 import { InicioUComponent } from './usuario/inicio-u/inicio-u.component';
+import {DetallesComponent } from './usuario/detalles/detalles.component';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -52,7 +53,8 @@ const appRoutes:Routes=[
   {path:'home', component:HomeComponent},
   {path:'login-u', component:LoginUComponent,canActivate:[NologinEGuard]},
   {path:'registro-u', component:RegistroUComponent},
-  {path:'inicio-u', component:InicioUComponent,canActivate:[LoginUGuard]}
+  {path:'inicio-u', component:InicioUComponent,canActivate:[LoginUGuard]},
+  {path:'detalles', component:DetallesComponent,canActivate:[LoginUGuard]}
   
 ];
 
@@ -69,6 +71,7 @@ const appRoutes:Routes=[
     LoginUComponent,
     RegistroUComponent,
     InicioUComponent,
+    DetallesComponent
   
   ],
   imports: [
