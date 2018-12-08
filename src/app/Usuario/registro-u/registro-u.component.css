@@ -41,3 +41,29 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+  .form-control{
+
+    margin: 10px;
+    text-align: center;
+  }
+  .btn-secondary{
+   position: absolute;
+   right: 35%;
+    width: 30%;
+    
+    text-align: center;
+
+    margin:auto;
+    padding: 10px;
+    
+  }
+  .btn-primary {
+    position: absolute;
+    right: 35%;
+    width: 30%;
+ padding: 10px;
+    text-align: center;
+
+    margin:auto;
+   
+  }
