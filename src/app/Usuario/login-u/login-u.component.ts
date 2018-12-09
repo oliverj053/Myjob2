@@ -6,6 +6,8 @@ import { Key } from 'protractor';
 import { Command } from 'selenium-webdriver';
 import { EmpleadoService } from '../servicios/empleado.service';
 import { Usuario } from '../modelos/usuario';
+//
+import{AppComponent}from'../../app.component';
 
 @Component({
   selector: 'app-login-u',
@@ -17,7 +19,8 @@ export class LoginUComponent implements OnInit {
 
   usuarioList: Usuario[];
   resultado: any[];
-  constructor(private empleadoService: EmpleadoService, private router: Router) { }
+  constructor(private empleadoService: EmpleadoService, private router: Router,
+    private appcomponent: AppComponent) { }
 
 
   ngOnInit() {
@@ -42,6 +45,7 @@ export class LoginUComponent implements OnInit {
       this.router.navigate(['/inicio-u']);
       localStorage.setItem('email', form.value.correo);
       localStorage.setItem('tipo', "3");
+      this.appcomponent.sesion=true;
     }
 
 

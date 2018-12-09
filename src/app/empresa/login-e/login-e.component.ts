@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { Command } from 'selenium-webdriver';
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
+import{AppComponent}from'../../app.component';
+
 @Component({
   selector: 'app-login-e',
   templateUrl: './login-e.component.html',
@@ -20,7 +22,7 @@ export class LoginEComponent implements OnInit {
   constructor(
     
     private servicioempService:ServicioempService,
-    private router:Router
+    private router:Router,private appComponent:AppComponent
     ) { 
 
     }
@@ -43,13 +45,13 @@ export class LoginEComponent implements OnInit {
     (empresa=>empresa.correo==form.value.correo 
       &&empresa.contrasenia==form.value.contrasenia);
     if(this.resultado[0]==null){
-    alert('Ingresa todos tus datos');}
+    alert('Error al iniciar sesion Revisa tus datos');}
     else{
-      
      // console.log(this.resultado[0]);
       this.router.navigate(['/inicio']);
       localStorage.setItem('email',form.value.correo);
       localStorage.setItem('tipo',"2");
+     this.appComponent.sesion=true;
     }
     
    

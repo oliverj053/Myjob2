@@ -20,9 +20,9 @@
             <a class="nav-link fa fa-info-circle" routerLinkActive="active" routerLink="/quienes"> ¿Quienes somos?</a>
           </li>
       </ul>
-
-      <a *ngIf="sesion" class="nav-link fa fa-power-off"  routerLinkActive="active" routerLink="/quienes"> Cerrar Sesión</a>
-         
+     
+      <button *ngIf="sesion" class="btn btn-outline-success my-2 my-sm-0 disable" (click)="cerrarSesion()"> <a class="fa fa-power-off"></a> Cerrar Sesión</button>
+    
      <!--
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar empleo.." aria-label="Buscar" disabled="disabled">

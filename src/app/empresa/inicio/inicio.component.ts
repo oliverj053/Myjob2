@@ -7,7 +7,7 @@ import { Vacante } from '../modelos/vacante';
 import{ModalComponent} from './modal/modal.component';
 import { NgForm } from '@angular/forms';
 
-import{AppComponent}from'../../app.component';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -15,9 +15,13 @@ import{AppComponent}from'../../app.component';
 })
 export class InicioComponent implements OnInit {
   vacanteList:Vacante [];
-  constructor(private router:Router,private vacanteemppleoService: VacanteempleoService,private appComponent:AppComponent ) { }
+  constructor(private router:Router,
+    private vacanteemppleoService: VacanteempleoService) { 
+     
+    }
    
   ngOnInit() {
+    
     this.vacanteemppleoService.getProducts()
     .snapshotChanges() //meto para obtener todos los cambios de la base de datos
     .subscribe(item=>{ //nos trae los datos guardados en la bd
@@ -28,12 +32,9 @@ export class InicioComponent implements OnInit {
         this.vacanteList.push(x as Vacante);
       });
     }); 
-    this.btnsesion();
-    
+  
   }
-    btnsesion(){
-      this.appComponent.btncerrarSesion=true;
-    }
+    
 
   onEdit(vacante: Vacante){
     this.router.navigate(['/modal']);
@@ -47,12 +48,7 @@ export class InicioComponent implements OnInit {
     }
   }
 
-   cerrrarSesion(){
-    localStorage.removeItem("email");
-    localStorage.removeItem("tipoUsuario");
-    this.router.navigate(['/login-e']);
-    this.appComponent.btncerrarSesion=false;
-  }
+  
 
 
 }

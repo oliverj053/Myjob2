@@ -15,13 +15,13 @@ export class AppComponent {
    localStorage.removeItem("tipo");
   }
   
-  btncerrarSesion=false;
+  sesion=false;
 
   cerrarSesion(){
     localStorage.removeItem("email");
     localStorage.removeItem("tipo");
-    this.btncerrarSesion=false;
-    this.router.navigate(['/home']);
+    this.sesion=false;
+     this.router.navigate(['/home']);
     
   }
 }
