@@ -1,33 +1,34 @@
-<br>
-<div class="container mx-auto">
-<div class="card mb-3" *ngFor="let vacante of vacanteList">
-  <img class="card-img-top"  width="5" height="30"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhTs_A-ChCKXgNvYFwOCW-Yhf0KxJ2dP3fNPUVoKKj3jXLm23nVg" alt="Card image cap">
-  <div class="card-body">
-    <h3 class="card-title">Empresa: {{vacante.nombreEmpresa}}</h3>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Se solicita: {{vacante.nombreVacante}}</h5>
-    <h6>Requisitos: </h6>
-    <p class="card-text">Grados de estudio: {{vacante.nivelEducativo}}</p>
-    <p class="card-text">Experiecia laboral: {{vacante.experiencia}}</p>
-    <p class="card-text">Aptitudes: {{vacante.aptitudes}}</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+<div class="jumbotron" style="background: url(https://www.trabajob.com//assets/img/slider4.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 80%;width: 100% ;">
+  <div class="container mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
+    <div class="card mb-3" *ngFor="let vacante of vacanteList">
 
-  <div class="card text-right" style="width: 20rem;">
-    
-        <a class="btn btn-secondary text-white" (click)="onEdit(vacante)">
-          <i class="far fa-edit"></i>Leer mas...
+      <div class="card-body" style="background-color: rgba(252, 252, 252, 0.4)">
+        <h3 class="card-title">Empresa: {{vacante.nombreEmpresa}}</h3>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Se solicita: {{vacante.nombreVacante}}</h5>
+        <h6>Requisitos: </h6>
+        <p class="card-text">Grados de estudio: {{vacante.nivelEducativo}}</p>
+        <p class="card-text">Experiecia laboral: {{vacante.experiencia}}</p>
+        <p class="card-text">Aptitudes: {{vacante.aptitudes}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+
+      <div class="card text-right" style="width: 20rem;">
+
+        <a class="btn btn-secondary text-white center" (click)="onEdit(vacante)">
+          <i class="far fa-edit center"></i>Leer mas...
         </a>
-  
+
+      </div>
+
+    </div>
+
+
   </div>
 
-  <img class="card-img-bottom" src="..." alt="Card image cap">
+  <button btn btn-primary (click)="cerrrarSesion()">Cerrar sesion</button>
 </div>
-
-
-</div>
-
-<button btn btn-primary (click)="cerrrarSesion()">Cerrar sesion</button>
