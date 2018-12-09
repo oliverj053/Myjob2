@@ -51,7 +51,7 @@ const appRoutes:Routes=[
   {path:'modal', component:ModalComponent,canActivate:[LoginEGuard]},
   {path:'quienes', component:QuienesComponent},
   {path:'home', component:HomeComponent},
-  {path:'login-u', component:LoginUComponent,canActivate:[NologinEGuard]},
+  {path:'login-u', component:LoginUComponent,canActivate:[NologinUGuard]},
   {path:'registro-u', component:RegistroUComponent},
   {path:'inicio-u', component:InicioUComponent,canActivate:[LoginUGuard]},
   {path:'detalles', component:DetallesComponent,canActivate:[LoginUGuard]}

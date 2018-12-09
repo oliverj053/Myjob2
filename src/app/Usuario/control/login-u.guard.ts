@@ -12,10 +12,10 @@ constructor (private router:Router){}
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       
-      if (localStorage.getItem("email")==null) {
+      if (localStorage.getItem("email")==null && localStorage.getItem("tipo")!="3") {
          return false;
          this.router.navigate(['/login-u']);
-      } else {
+      } else if (localStorage.getItem("email")!=null && localStorage.getItem("tipo")=="3") {
         return true;
       }
   }

@@ -11,10 +11,10 @@ export class LoginEGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       
-      if (localStorage.getItem("email")==null && localStorage.getItem("tipoUsuario")!="dos") {
+      if (localStorage.getItem("email")==null && localStorage.getItem("tipo")!="2") {
         return false;
         this.router.navigate(['/login-e']);
-      } else{
+      } else if (localStorage.getItem("email")!=null && localStorage.getItem("tipo")=="2") {
         return true;
       }
 

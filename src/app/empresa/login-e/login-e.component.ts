@@ -46,10 +46,10 @@ export class LoginEComponent implements OnInit {
     alert('Ingresa todos tus datos');}
     else{
       
-      console.log(this.resultado[0]);
+     // console.log(this.resultado[0]);
       this.router.navigate(['/inicio']);
       localStorage.setItem('email',form.value.correo);
-      localStorage.setItem('tipoUsuario',"dos");
+      localStorage.setItem('tipo',"2");
     }
     
    
