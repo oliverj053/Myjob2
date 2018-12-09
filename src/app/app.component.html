@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLinkActive="active" routerLink="/home">
         <img src="../assets/Images/myjoblog.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        MyJob
+         MyJob
       </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,24 +11,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="login-u">Empleos</a>
+          <a class="nav-link fa fa-briefcase" routerLinkActive="active" routerLink="/login-u"> Empleos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/login-e">Empresa</a>
+            <a class=" nav-link fa fa-building" routerLinkActive="active" routerLink="/login-e"> Empresa</a>
           </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/quienes">¿Quienes somos?</a>
+            <a class="nav-link fa fa-info-circle" routerLinkActive="active" routerLink="/quienes"> ¿Quienes somos?</a>
           </li>
       </ul>
- <!--
-      <button class="btn btn-secondary" type="reset"  (click)="cerrarSesion()">
-          <i class="fas fa-sync-alt"> Cerrar Sesión</i>
-      </button>
-     -->
+
+      <a *ngIf="sesion" class="nav-link fa fa-power-off"  routerLinkActive="active" routerLink="/quienes"> Cerrar Sesión</a>
+         
+     <!--
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar empleo.." aria-label="Buscar" disabled="disabled">
         <button class="btn btn-outline-success my-2 my-sm-0 disable" type="submit" disabled="disabled">Buscar</button>
-      </form> 
+      </form>  -->
     </div>
   </nav>
 

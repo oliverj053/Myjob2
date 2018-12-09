@@ -14,12 +14,14 @@ export class AppComponent {
    localStorage.removeItem("email");
    localStorage.removeItem("tipo");
   }
+  
   btncerrarSesion=false;
 
   cerrarSesion(){
     localStorage.removeItem("email");
+    localStorage.removeItem("tipo");
     this.btncerrarSesion=false;
-    this.router.navigate(['/login-e']);
+    this.router.navigate(['/home']);
     
   }
 }

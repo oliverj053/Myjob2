@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 //clase empresa
 import { Usuario} from '../modelos/usuario';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +17,9 @@ export class EmpleadoService {
   
     constructor(private firebase: AngularFireDatabase) { }
   
-    getProducts() {
+    getProducts() { 
       return this.usuarioList = this.firebase.list('usuario');
+
     }
   
     insertarUsuario(usuario:Usuario){
