@@ -7,4 +7,5 @@ export class Empresa {
     apellidos:string;
     correo:string;
     contrasenia:string;
+    
 }

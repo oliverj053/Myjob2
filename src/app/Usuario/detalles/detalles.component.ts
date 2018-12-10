@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { VacanteempleoService } from 'src/app/empresa/servicios/vacanteempleo.service';
-import{Vacante} from '../../empresa/modelos/vacante';
- 
+import { VacanteempleoService } from '../../empresa/servicios/vacanteempleo.service';
 ////pdf
 import * as jsPDF from 'jspdf';
 @Component({
@@ -10,14 +8,17 @@ import * as jsPDF from 'jspdf';
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-  vacanteList:Vacante [];
-  constructor(private vacanteempleoService:VacanteempleoService) { }
+ 
+  constructor(private vacanteempleoService: VacanteempleoService) { }
 
   ngOnInit() {
     this.vacanteempleoService.getProducts();
   }
 
-    @ViewChild('content') Content: ElementRef;
+  
+    
+  @ViewChild('content') Content: ElementRef;
+  
   public descargarPDF(){
     let doc =new jsPDF();
 
@@ -29,12 +30,13 @@ export class DetallesComponent implements OnInit {
 
     let content=this.Content.nativeElement;
 
-    doc.fromHTML(content.innerHTML, 15, 15, {
-      'width':190,
+    doc.fromHTML(content.innerHTML, 0, 0, {
+      'width':100,
       'elementHandlers': specialElemetHandlers
     });
 
     doc.save('Empleo.pdf');
   }
+
 
 }

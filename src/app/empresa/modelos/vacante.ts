@@ -10,4 +10,5 @@ export class Vacante {
     tipoEmpleo: string;
     funcionesLaborales: string;
     descripcion: string;
+    acerca:string;
 }

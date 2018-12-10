@@ -27,7 +27,8 @@ vacantesel: Vacante =new Vacante();
       sector: vacante.sector,
       tipoEmpleo:vacante.tipoEmpleo,
       funcionesLaborales:vacante.funcionesLaborales,
-      descripcion: vacante.descripcion
+      descripcion: vacante.descripcion, 
+      acerca: vacante.acerca
     });
     alert('Vacante Registrado correctamente');
   }
@@ -42,7 +43,8 @@ vacantesel: Vacante =new Vacante();
       sector: vacante.sector,
       tipoEmpleo:vacante.tipoEmpleo,
       funcionesLaborales:vacante.funcionesLaborales,
-      descripcion: vacante.descripcion
+      descripcion: vacante.descripcion,
+      acerca:vacante.acerca
       
     });
   }

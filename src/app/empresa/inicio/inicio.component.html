@@ -31,10 +31,10 @@
             <td>{{vacante.funcionesLaborales}}</td>
             <td>{{vacante.descripcion}}</td>
             <td width="80">
-              <a class="btn btn-secondary text-white" (click)="onEdit(vacante)">
+              <a class="btn btn-secondary btn-block text-white" (click)="onEdit(vacante)">
                 <i class="far fa-edit"></i>
               </a>
-              <a class="btn btn-danger text-white contrainer" (click)="onDelete(vacante.id)">
+              <a class="btn btn-danger btn-block text-white contrainer" (click)="onDelete(vacante.id)">
                 <i class="fas fa-trash"></i>
               </a>
             </td>
@@ -43,12 +43,8 @@
       </table>
       <div style="text-align: center">
       <button class="btn btn-primary btn-lg" type="submit">
-          <i class="fas fa-plus-circle" routerLink="/modal">Agregar nueva Vacante</i>
+          <i class="fas fa-plus-circle" (click)="limpiar()">Agregar nueva Vacante</i>
       </button>
     </div>
     </div>
-</div>
-<div style="text-align: center">  
-  <button type="button" class="btn btn-danger btn-lg" (click)="cerrrarSesion()">Cerrar sesion</button>
-</div>
 </div>

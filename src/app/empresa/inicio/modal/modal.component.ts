@@ -18,16 +18,17 @@ export class ModalComponent implements OnInit {
 
   closeResult: string;
 
-  constructor( private vacanteempleoService: VacanteempleoService, private router:Router) { }
+  constructor(private vacanteempleoService: VacanteempleoService, private router: Router) { }
 
   ngOnInit() {
     this.vacanteempleoService.getProducts();
-    this.limpiarFormulario();
+
   }
 
   onSubmit(vacanteForm: NgForm) {
-    if (vacanteForm.value.id == null)
-      this.vacanteempleoService.insertar(vacanteForm.value);
+
+    if (vacanteForm.value.id == null) 
+      this.vacanteempleoService.vacantesel = new Vacante();
     else
       this.vacanteempleoService.modificar(vacanteForm.value);
 
@@ -42,7 +43,7 @@ export class ModalComponent implements OnInit {
     }
   }
 
- 
+
 
 }
 

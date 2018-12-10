@@ -10,17 +10,24 @@ export class AppComponent {
   title = 'myjob';  
 
   constructor(private router:Router){
-   // this.router.navigate(['/home']);
+   this.router.navigate(['/home']);
    localStorage.removeItem("email");
    localStorage.removeItem("tipo");
   }
   
   sesion=false;
+  quienes=true;
+  empleo=true;
+  empresa=true;
+  
 
   cerrarSesion(){
     localStorage.removeItem("email");
     localStorage.removeItem("tipo");
     this.sesion=false;
+    this.quienes=true;
+    this.empleo=true;
+    this.empresa=true;
      this.router.navigate(['/home']);
     
   }

@@ -46,6 +46,9 @@ export class LoginUComponent implements OnInit {
       localStorage.setItem('email', form.value.correo);
       localStorage.setItem('tipo', "3");
       this.appcomponent.sesion=true;
+      this.appcomponent.empleo = true;
+      this.appcomponent.quienes = false;
+      this.appcomponent.empresa =false;
     }
 
 
