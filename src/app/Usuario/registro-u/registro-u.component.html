@@ -18,21 +18,21 @@
           name="nombre" 
           #nombre ="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.nombre" 
-          placeholder="Nombre De Usuario" required pattern="[a-z|A-Z]{15}" title="el nombre no debe exceder de 15 letras">
+          placeholder="Nombre De Usuario">
           
           <input type="text" 
           class="form-control" 
           name="apellidos" 
           #apellidos ="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.apellidos" 
-          placeholder="Apellido(s)" required pattern="[a-z|A-Z]{20}" title="el nombre no debe exceder de 20 letras">
+          placeholder="Apellido(s)">
           
       <input type="text" 
           class="form-control" 
           name="rfc" 
           #rfc ="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.rfc" 
-          placeholder="RFC" required pattern="[a-z]{13}" title="el RFC no debe exceder de 13 caracteres">
+          placeholder="RFC">
         
       
           <input type="email" 
@@ -40,7 +40,7 @@
           name="correo" 
           #correo="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.correo" 
-          placeholder="Correo Electrónico" required pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" title="el formato debe ser el correcto">
+          placeholder="Correo Electrónico">
      </div>
      <div class="col-md-6">
           <input type="password" 
@@ -48,20 +48,14 @@
           name="contrasenia" 
           #contrasenia="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.contrasenia" 
-          placeholder="Contraseña" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;" title="Minimo 8 caracteres
-          Maximo 15
-          Al menos una letra mayúscula
-          Al menos una letra minucula
-          Al menos un dígito
-          No espacios en blanco
-          Al menos 1 caracter especial" required>
+          placeholder="Contraseña">
 
           <input type="text" 
           class="form-control" 
           name="telefono" 
           #telefono="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.telefono" 
-          placeholder="Teléfono" required pattern="/^[9|5|3][0-9]{7}$/" title="debe comenzar con 953 --- --- -">
+          placeholder="Teléfono" >
         
           
           <input type="text" 
@@ -69,14 +63,14 @@
           name="direccion" 
           #direccion="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.direccion" 
-          placeholder="Dirección" required pattern="[a-z|A-Z]./*{15}" title="ingrese una direccion valida">
+          placeholder="Dirección" >
                 
           <input type="text" 
           class="form-control" 
           name="profesion" 
           #profesion="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.profesion" 
-          placeholder="Profesion" required pattern="[a-z|A-Z]./*{15}" title="ingrese una profesion valida">
+          placeholder="Profesion" >
            
         </div>
         <div class="col-md-12">
@@ -85,7 +79,7 @@
           name="gradoEstudio" 
           #gradoEstudio="ngModel" 
           [(ngModel)]="empleadoService.selecUsuario.gradoEstudio" 
-          placeholder="Grado De Estudio" required pattern="[a-z|A-Z]./*{15}" title="ingrese nivel de Estudio valido">
+          placeholder="Grado De Estudio">
         </div>
       </div>
         <button class="btn btn-secondary btn-block"  type="reset" (click)="limpiarFormulario(formEmpresa )">

@@ -50,7 +50,7 @@ export class InicioComponent implements OnInit {
 
 limpiar(){
   this.vacanteemppleoService.vacantesel = new Vacante();
-  this.router.navigate(['/modal']);
+  
 
 }
 

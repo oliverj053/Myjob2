@@ -10,9 +10,14 @@ export class AppComponent {
   title = 'myjob';  
 
   constructor(private router:Router){
-   this.router.navigate(['/home']);
-   localStorage.removeItem("email");
-   localStorage.removeItem("tipo");
+    if(localStorage.getItem("email")==null){
+      this.router.navigate(['/home']);
+    }else{
+      localStorage.removeItem("email");
+      localStorage.removeItem("tipo");
+    }
+   
+  
   }
   
   sesion=false;

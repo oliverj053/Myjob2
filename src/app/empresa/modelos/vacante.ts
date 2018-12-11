@@ -7,8 +7,8 @@ export class Vacante {
     nivelEducativo: string;
     experiencia: string;
     sector: string;
-    tipoEmpleo: string;
-    funcionesLaborales: string;
+    jornada: string;
+    sexo: string;
     descripcion: string;
     acerca:string;
 }

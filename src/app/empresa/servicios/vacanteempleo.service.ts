@@ -25,8 +25,8 @@ vacantesel: Vacante =new Vacante();
       nivelEducativo:vacante.nivelEducativo,
       experiencia: vacante.experiencia,
       sector: vacante.sector,
-      tipoEmpleo:vacante.tipoEmpleo,
-      funcionesLaborales:vacante.funcionesLaborales,
+      jornada:vacante.jornada,
+      sexo:vacante.sexo,
       descripcion: vacante.descripcion, 
       acerca: vacante.acerca
     });
@@ -41,8 +41,8 @@ vacantesel: Vacante =new Vacante();
       nivelEducativo:vacante.nivelEducativo,
       experiencia: vacante.experiencia,
       sector: vacante.sector,
-      tipoEmpleo:vacante.tipoEmpleo,
-      funcionesLaborales:vacante.funcionesLaborales,
+      jornada:vacante.jornada,
+      sexo:vacante.sexo,
       descripcion: vacante.descripcion,
       acerca:vacante.acerca
       

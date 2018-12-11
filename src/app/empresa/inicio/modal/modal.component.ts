@@ -28,7 +28,7 @@ export class ModalComponent implements OnInit {
   onSubmit(vacanteForm: NgForm) {
 
     if (vacanteForm.value.id == null) 
-      this.vacanteempleoService.vacantesel = new Vacante();
+      this.vacanteempleoService.insertar(vacanteForm.value);
     else
       this.vacanteempleoService.modificar(vacanteForm.value);
 

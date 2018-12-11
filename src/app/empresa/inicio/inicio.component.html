@@ -1,24 +1,24 @@
 <div class="jumbotron" style="background: url(https://www.trabajob.com//assets/img/slider4.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 80%;width: 100% ;">
-<div class="jumbotron mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
-  <div class="card" style="background-color: rgba(252, 252, 252, 0.0)">
+  <div class="jumbotron mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
+    <div class="card" style="background-color: rgba(252, 252, 252, 0.0)">
       <div class="card-header">
-          <h3 style="text-align:center">Lista de vacantes Registrados</h3>
-        </div>
+        <h3 style="text-align:center">Lista de vacantes Registrados</h3>
+      </div>
       <table class="table table-sm table-hover table-bordered table-responsive" style="background-color: rgba(255, 255, 255, 0.3)">
-          <thead class="thead-dark">
-              <tr>
-                <th scope="col">Empresa</th>
-                <th scope="col">Vacante</th>
-                <th scope="col">Aptitudes</th>
-                <th scope="col">Nivel De Estudio</th>
-                <th scope="col">Experiencia</th>
-                <th scope="col">Sector</th>
-                <th scope="col">Tipo De Empleo</th>
-                <th scope="col">Funciones Laborales</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Acciones</th>
-              </tr>
-            </thead>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Empresa</th>
+            <th scope="col">Vacante</th>
+            <th scope="col">Aptitudes</th>
+            <th scope="col">Nivel De Estudio</th>
+            <th scope="col">Experiencia</th>
+            <th scope="col">Sector</th>
+            <th scope="col">Jornada</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
         <tbody>
           <tr *ngFor="let vacante of vacanteList">
             <td>{{vacante.nombreEmpresa}}</td>
@@ -27,8 +27,8 @@
             <td>{{vacante.nivelEducativo}}</td>
             <td>{{vacante.experiencia}}</td>
             <td>{{vacante.sector}}</td>
-            <td>{{vacante.tipoEmpleo}}</td>
-            <td>{{vacante.funcionesLaborales}}</td>
+            <td>{{vacante.jornada}}</td>
+            <td>{{vacante.sexo}}</td>
             <td>{{vacante.descripcion}}</td>
             <td width="80">
               <a class="btn btn-secondary btn-block text-white" (click)="onEdit(vacante)">
@@ -41,10 +41,7 @@
           </tr>
         </tbody>
       </table>
-      <div style="text-align: center">
-      <button class="btn btn-primary btn-lg" type="submit">
-          <i class="fas fa-plus-circle" (click)="limpiar()">Agregar nueva Vacante</i>
-      </button>
+      <button class="btn btn-success" (click)="limpiar()" routerLink="/modal"><a class="fas fa-plus-circle"></a> Nuevo vacante</button>
     </div>
-    </div>
-</div>
+  </div>
+  
