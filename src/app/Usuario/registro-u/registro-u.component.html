@@ -1,101 +1,129 @@
 <body class="text-center" style="background: url(https://www.conavalsi.com/_Uploads/Noticias/Cabecera/contratacio%CC%81n%20de%20personal%20los%20tra%CC%81mites%20paso%20a%20paso.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 100%;width: 100% ;">
-  <form class="form-signin" #formEmpresa="ngForm" (ngSubmit)="onSubmit(formEmpresa)">
+  <form class="form-signin" [formGroup]="formEmpresa" (ngSubmit)="onSubmit(formEmpresa)" novalidate>
     <div class="container jumbotron" style="background-color: rgba(252, 252, 252, 0.5)">
       <div>
-      <img src="https://cdn.icon-icons.com/icons2/1169/PNG/512/1489186737-constructiondigshovelworker_81809.png" width="80"
-        height="80" class="d-inline-block align-top" alt="">
+        <img src="https://cdn.icon-icons.com/icons2/1169/PNG/512/1489186737-constructiondigshovelworker_81809.png"
+          width="80" height="80" class="d-inline-block align-top" alt="">
 
-      <h1 class="h3 mb-3 font-weight-normal">Nuevo Usuario</h1>
-    
-<div class="row">
-    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="empleadoService.selecUsuario.id">
-  <div class="col-md-6">
+        <h1 class="h3 mb-3 font-weight-normal">Nuevo Usuario</h1>
 
-      
-      
-      <input type="text" 
-          class="form-control" 
-          name="nombre" 
-          #nombre ="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.nombre" 
-          placeholder="Nombre De Usuario">
-          
-          <input type="text" 
-          class="form-control" 
-          name="apellidos" 
-          #apellidos ="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.apellidos" 
-          placeholder="Apellido(s)">
-          
-      <input type="text" 
-          class="form-control" 
-          name="rfc" 
-          #rfc ="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.rfc" 
-          placeholder="RFC">
-        
-      
-          <input type="email" 
-          class="form-control" 
-          name="correo" 
-          #correo="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.correo" 
-          placeholder="Correo Electrónico">
-     </div>
-     <div class="col-md-6">
-          <input type="password" 
-          class="form-control" 
-          name="contrasenia" 
-          #contrasenia="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.contrasenia" 
-          placeholder="Contraseña">
+        <div class="row">
+          <!--
+          <input type="hidden" name="id" [(ngModel)]="empleadoService.selecUsuario.id">-->
+          <div class="col-md-6">
 
-          <input type="text" 
-          class="form-control" 
-          name="telefono" 
-          #telefono="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.telefono" 
-          placeholder="Teléfono" >
-        
-          
-          <input type="text" 
-          class="form-control" 
-          name="direccion" 
-          #direccion="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.direccion" 
-          placeholder="Dirección" >
+
+
+            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre De Usuario">
+            <div *ngIf="formEmpresa.get('nombre').errors">
+              <div *ngIf="formEmpresa.get('nombre').touched && formEmpresa.get('nombre').errors['required']" class="alert alert-primary">Nombre
+                Requerido</div>
+              <div *ngIf="formEmpresa.get('nombre').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                4 caracteres</div>
+              <div *ngIf="formEmpresa.get('nombre').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                15 caracteres</div>
+              <div *ngIf="formEmpresa.get('nombre').errors['pattern']" class="alert alert-success" role="alert">Estructura:
+                Nombre</div>
+            </div>
+
+            <input type="text" class="form-control" formControlName="apellidos" placeholder=" Apellido">
+            <div *ngIf="formEmpresa.get('apellidos').errors">
+                <div *ngIf="formEmpresa.get('apellidos').touched && formEmpresa.get('apellidos').errors['required']" class="alert alert-primary">Apellido
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('apellidos').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  4 caracteres</div>
+                <div *ngIf="formEmpresa.get('apellidos').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  15 caracteres</div>
+                <div *ngIf="formEmpresa.get('apellidos').errors['pattern']" class="alert alert-success" role="alert">Estructura:
+                Apellido</div>
+              </div>
+
+            <input type="text" class="form-control" formControlName="rfc" placeholder="RFC">
+            <div *ngIf="formEmpresa.get('rfc').errors">
+                <div *ngIf="formEmpresa.get('rfc').touched && formEmpresa.get('rfc').errors['required']" class="alert alert-primary">RFC
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('rfc').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  13 caracteres</div>
+                <div *ngIf="formEmpresa.get('rfc').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  13 caracteres</div>
+                <div *ngIf="formEmpresa.get('rfc').errors['pattern']" class="alert alert-success" role="alert">Estructura:
+                JOJO126714TF4</div>
+              </div>
+
+            <input type="email" class="form-control" formControlName="correo" placeholder="Correo Electrónico">
+            <div *ngIf="formEmpresa.get('correo').errors " >
+                <div *ngIf="formEmpresa.get('correo').touched && formEmpresa.get('correo').errors['required']" class="alert alert-primary" role="alert">Correo Requerido</div>
+                <div *ngIf="formEmpresa.get('correo').errors['email']" class="alert alert-danger">Correo Incorrecto estructura:example@gmail.com</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input type="password" class="form-control" formControlName="contrasenia" placeholder="Contraseña">
+            <div *ngIf="formEmpresa.get('contrasenia').errors ">
+                <div *ngIf="formEmpresa.get('contrasenia').touched && formEmpresa.get('contrasenia').errors['required']" class="alert alert-primary" >Contraseña Requerido</div>
+                <div *ngIf="formEmpresa.get('contrasenia').errors['minlength']" class="alert alert-warning" role="alert">Contraseña Inseguro</div>
+            </div>
+            <input type="number" class="form-control" formControlName="telefono" placeholder="Teléfono">
+            <div *ngIf="formEmpresa.get('telefono').errors">
+                <div *ngIf="formEmpresa.get('telefono').touched && formEmpresa.get('telefono').errors['required']" class="alert alert-primary">Tel.
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('telefono').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  10 caracteres</div>
+                <div *ngIf="formEmpresa.get('telefono').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  10 caracteres</div>
+                <div *ngIf="formEmpresa.get('telefono').errors['pattern']" class="alert alert-success" role="alert">Estructura:
+                9531334478</div>
+              </div>
+
+
+            <input type="text" class="form-control" formControlName="direccion" placeholder="Dirección">
+            <div *ngIf="formEmpresa.get('direccion').errors">
+                <div *ngIf="formEmpresa.get('direccion').touched && formEmpresa.get('direccion').errors['required']" class="alert alert-primary">Direccion
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('direccion').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  5 caracteres</div>
+                <div *ngIf="formEmpresa.get('direccion').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  10 caracteres</div>
                 
-          <input type="text" 
-          class="form-control" 
-          name="profesion" 
-          #profesion="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.profesion" 
-          placeholder="Profesion" >
-           
+              </div>
+
+            <input type="text" class="form-control" formControlName="profesion" placeholder="Profesion">
+            <div *ngIf="formEmpresa.get('profesion').errors">
+                <div *ngIf="formEmpresa.get('profesion').touched && formEmpresa.get('profesion').errors['required']" class="alert alert-primary">Direccion
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('profesion').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  6 caracteres</div>
+                <div *ngIf="formEmpresa.get('profesion').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  20 caracteres</div>
+                
+              </div>
+          </div>
+          <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="gradoEstudio" placeholder="Grado De Estudio">
+            <div *ngIf="formEmpresa.get('gradoEstudio').errors">
+                <div *ngIf="formEmpresa.get('gradoEstudio').touched && formEmpresa.get('gradoEstudio').errors['required']" class="alert alert-primary">Direccion
+                  Requerido</div>
+                <div *ngIf="formEmpresa.get('gradoEstudio').errors['minlength']" class="alert alert-warning" role="alert">Minimo
+                  6 caracteres</div>
+                <div *ngIf="formEmpresa.get('gradoEstudio').errors['maxlength']" class="alert alert-warning" role="alert">Maximo
+                  20 caracteres</div>
+                
+              </div>
+          </div>
         </div>
-        <div class="col-md-12">
-          <input type="text" 
-          class="form-control" 
-          name="gradoEstudio" 
-          #gradoEstudio="ngModel" 
-          [(ngModel)]="empleadoService.selecUsuario.gradoEstudio" 
-          placeholder="Grado De Estudio">
+        <button class="btn btn-secondary btn-block" type="reset" (click)="limpiarFormulario(formEmpresa )">
+          <i class="fas fa-sync-alt"> Limpiar </i>
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-block" type="submit" [disabled]="!formEmpresa.valid">Crear cuenta</button>
+
+        <br>
+        <hr>
+
+        <div class="form-group">
+          <h6>¿Ya tienes cuenta?<a routerLink="/login-u"> Inicia Sesión</a></h6>
         </div>
-      </div>
-        <button class="btn btn-secondary btn-block"  type="reset" (click)="limpiarFormulario(formEmpresa )">
-            <i class="fas fa-sync-alt"> Limpiar </i>
-          </button>
-          <br>
-          <br>
-      <button class="btn btn-primary btn-block" type="submit">Crear Cuenta</button>
-    
-   <br>
-      <hr>
-    
-      <div class="form-group">
-        <h6>¿Ya tienes cuenta?<a routerLink="/login-u"> Inicia Sesión</a></h6>
-      </div>
-      <p class="mt-5 mb-3 text-muted">&copy; MyJob 2018</p>
+        <p class="mt-5 mb-3 text-muted">&copy; MyJob 2018</p>
       </div>
     </div>
   </form>

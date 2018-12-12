@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
+import {ReactiveFormsModule} from '@angular/forms';
+
 //Firebase
 import {AngularFireModule}from 'angularfire2'; 
 import {AngularFireDatabaseModule}from 'angularfire2/database';
@@ -81,7 +83,8 @@ const appRoutes:Routes=[
     AppRoutingModule,RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,AngularFireAuthModule,FormsModule,AlertModule.forRoot(),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [ServicioempService,LoginEGuard,NologinEGuard,LoginUGuard,NologinUGuard],
   bootstrap: [AppComponent]
