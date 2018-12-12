@@ -1,10 +1,14 @@
-export class Empresa {
-    id:string;
-    nombreE:string;
-    rfc:string;
-    ubicacion:string;
-    nombreU:string;
+
+export class Usuario {
+    id :string;
+    nombre:string;
     apellidos:string;
+    rfc: string;
     correo:string;
     contrasenia:string;
+    telefono:number;
+    direccion:string;
+    profesion:string;
+    gradoEstudio:string;
+    
 }

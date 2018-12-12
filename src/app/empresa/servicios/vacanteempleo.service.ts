@@ -19,15 +19,32 @@ vacantesel: Vacante =new Vacante();
 
   insertar(vacante:Vacante){
     this.vacanteList.push({
-      nombreEmpresa:vacante.nombreEmpresa
-   
+      nombreEmpresa:vacante.nombreEmpresa,
+      nombreVacante:vacante.nombreVacante,
+      aptitudes:vacante.aptitudes,
+      nivelEducativo:vacante.nivelEducativo,
+      experiencia: vacante.experiencia,
+      sector: vacante.sector,
+      jornada:vacante.jornada,
+      sexo:vacante.sexo,
+      descripcion: vacante.descripcion, 
+      acerca: vacante.acerca
     });
     alert('Vacante Registrado correctamente');
   }
 
   modificar(vacante:Vacante){
     this.vacanteList.update(vacante.id,{
-      nombreEmpresa:vacante.nombreEmpresa
+      nombreEmpresa:vacante.nombreEmpresa,
+      nombreVacante:vacante.nombreVacante,
+      aptitudes:vacante.aptitudes,
+      nivelEducativo:vacante.nivelEducativo,
+      experiencia: vacante.experiencia,
+      sector: vacante.sector,
+      jornada:vacante.jornada,
+      sexo:vacante.sexo,
+      descripcion: vacante.descripcion,
+      acerca:vacante.acerca
       
     });
   }

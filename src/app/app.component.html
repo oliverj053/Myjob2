@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLinkActive="active" routerLink="/home">
-        <img src="../assets/Images/myjoblog.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="https://cdn.icon-icons.com/icons2/1169/PNG/512/1489186737-constructiondigshovelworker_81809.png" width="30" height="30" class="d-inline-block align-top" alt="">
         MyJob
       </a>
 
@@ -11,21 +11,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/AccesoUser/login-e">Empleos</a>
+          <a  *ngIf="empleo" class="nav-link fa fa-briefcase" routerLinkActive="active" routerLink="/login-u"> Empleos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/login-e">Empresa</a>
+            <a  *ngIf="empresa"  class=" nav-link fa fa-building" routerLinkActive="active" routerLink="/login-e"> Empresa</a>
           </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/quienes">¿Quienes somos?</a>
+            <a  *ngIf="quienes" class="nav-link fa fa-info-circle" routerLinkActive="active" routerLink="/quienes"> ¿Quienes somos?</a>
           </li>
       </ul>
+     
+      <button *ngIf="sesion" class="btn btn-outline-success my-2 my-sm-0 disable" (click)="cerrarSesion()"> <a class="fa fa-power-off"></a> Cerrar Sesión</button>
+    
+     <!--
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar empleo.." aria-label="Buscar" disabled="disabled">
         <button class="btn btn-outline-success my-2 my-sm-0 disable" type="submit" disabled="disabled">Buscar</button>
-      </form>
+      </form>  -->
     </div>
   </nav>
 
   <router-outlet></router-outlet>
-  

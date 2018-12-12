@@ -1,5 +1,83 @@
+<div class="jumbotron" style="background: url(https://www.trabajob.com//assets/img/slider4.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 80%;width: 100% ;">
+<div class="container mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
+    <div class="card mt-5" style="background-color: rgba(252, 252, 252, 0.4)">
+        <h1>Registro De Vacante De Empleo</h1>
+        <div class="card-body">
+            <form #vacanteForm="ngForm" (ngSubmit)="onSubmit(vacanteForm)">
+                <!---CAMPO OCULTO PARA SABER SI ESTA EDITANDO O AGREGANDO-->
+                <input type="hidden" name="id" #id="ngModel" [(ngModel)]="vacanteempleoService.vacantesel.id">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombreEmpresa" #nombreEmpresa="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.nombreEmpresa" placeholder="Nombre De La Empresa">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nombreVacante" #nombreVacante="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.nombreVacante" placeholder="Nombre Del Empleo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="aptitudes" #aptitudes="ngModel" [(ngModel)]="vacanteempleoService.vacantesel.aptitudes"
+                                placeholder="Aptitudes">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nivelEducativo" #nivelEducativo="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.nivelEducativo" placeholder="Nivel Educativo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="experiencia" #experiencia="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.experiencia" placeholder="Experiencia">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
 
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="sector" #sector="ngModel" [(ngModel)]="vacanteempleoService.vacantesel.sector"
+                                placeholder="Sector">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="jornada" #jornada="ngModel" [(ngModel)]="vacanteempleoService.vacantesel.jornada"
+                                placeholder="Jornada">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="sexo" #sexo="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.sexo" placeholder="Sexo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="descripcion" #descripcion="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.descripcion" placeholder="Descripción Del Empleo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="acerca" #acerca="ngModel"
+                                [(ngModel)]="vacanteempleoService.vacantesel.acerca" placeholder="Acerca de la empresa">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-plus-circle">Guardar Vacante</i>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-secondary" type="reset" (click)="limpiarFormulario()">
+                            <i class="fas fa-sync-alt">Limpiar Formulario</i>
+                        </button>
 
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-secondary" type="reset" routerLink="/inicio">
+                            <i class="fas fa-sync-alt">Atrás</i>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
 
 
 

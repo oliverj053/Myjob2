@@ -1,0 +1,27 @@
+<div class="jumbotron" style="background: url(https://www.trabajob.com//assets/img/slider4.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 80%;width: 100%">
+  <div class="container mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
+    <br>
+    <div class="row container" style="text-align: center">
+      <div class="wrap row">
+      <div class="card mb-3" *ngFor="let vacante of vacanteList" style="width: 22.3rem">
+        <div class="card-header">
+          <h3 style="text-align:center">{{vacante.nombreVacante}}</h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Se solicita: {{vacante.nombreVacante}}</h5>
+          <h6>Requisitos: </h6>
+          <p class="card-text">Grados de estudio: {{vacante.nivelEducativo}}</p>
+          <p class="card-text">Experiecia laboral: {{vacante.experiencia}}</p>
+          <p class="card-text">Aptitudes: {{vacante.aptitudes}}</p>
+
+        </div>
+
+        <div class=" btn btn-primary" style="text-align: center" (click)="onEdit(vacante)">
+          Leer más....
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+  </div>

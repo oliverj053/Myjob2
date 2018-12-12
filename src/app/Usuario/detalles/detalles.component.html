@@ -1,0 +1,99 @@
+<body>
+    
+
+
+
+<div class="jumbotron" style="background: url(https://www.trabajob.com//assets/img/slider4.jpg) no-repeat fixed center;-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;  background-size: cover;  height: 80%;width: 100%;">
+    <div class="container jumbotron mx-auto" style="background-color: rgba(252, 252, 252, 0.4)">
+        <div class="card" style="background-color: rgba(252, 252, 252, 0.6)">
+            <div style="text-align:center">
+                <img class="card-img-top" src="https://cdn.icon-icons.com/icons2/1169/PNG/512/1489186737-constructiondigshovelworker_81809.png"
+                    width="90" height="90" class="d-inline-block align-top" alt="" alt="Card image cap">
+            </div>
+            <div class="card-body" style="text-align:center">
+                <h5 class="card-title">By MyJob</h5>
+                <hr>
+            </div>
+            <div class="card-header">
+                <h6>{{vacanteempleoService.vacantesel.nombreEmpresa}} solicita:
+                    {{vacanteempleoService.vacantesel.nombreVacante}} </h6>
+            </div>
+            <li class="list-group-item">
+                <p class="card-text">{{vacanteempleoService.vacantesel.descripcion}}</p>
+            </li>
+
+
+            <div class="card-header">
+                <h6>Requisitos: </h6>
+            </div>
+
+            <li class="list-group-item">
+                <p>Grado De Estudio: {{vacanteempleoService.vacantesel.nivelEducativo}}</p>
+                <p>Experiencia: {{vacanteempleoService.vacantesel.experiencia}}</p>
+                <p>Aptitudes: {{vacanteempleoService.vacantesel.aptitudes}}</p>
+            </li>
+            <div class="card-header">
+                <h6>sexo: </h6>
+            </div>
+            <li class="list-group-item">
+                <p>{{vacanteempleoService.vacantesel.sexo}}</p>
+            </li>
+            <div class="card-header">
+                <h6>Jornada: </h6>
+            </div>
+            <li class="list-group-item">
+                <p>{{vacanteempleoService.vacantesel.jornada}}</p>
+            </li>
+            <div class="card-header">
+                <h6>Sector: </h6>
+            </div>
+            <li class="list-group-item">
+                <p>{{vacanteempleoService.vacantesel.sector}}</p>
+            </li>
+            <div class="card-header">
+                <h6>Acerca de la empresa: </h6>
+            </div>
+            <li class="list-group-item">
+                <p>{{vacanteempleoService.vacantesel.acerca}}</p>
+            </li>
+            <div class="card-body">
+                <p class="mt-5 mb-3 text-muted">&copy; MyJob 2018</p>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <br>
+            <button type="button" class="btn btn-success btn-block" (click)="descargarPDF()">Generar PDF</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="ocultar" id="content" #content >
+    <h1 aling="center" >Oferta de empleo por MyJob</h1>
+    <hr>
+    <h4>La empresa: {{vacanteempleoService.vacantesel.nombreEmpresa}} solicita: </h4>
+    <p>{{vacanteempleoService.vacantesel.nombreVacante}}</p>
+    <h4>Descripción:</h4>
+    <p>{{vacanteempleoService.vacantesel.descripcion}}</p>
+   
+    <h4>Requisitos: </h4>
+    <p>Grado De Estudio: {{vacanteempleoService.vacantesel.nivelEducativo}}</p>
+    <p>Experiencia: {{vacanteempleoService.vacantesel.experiencia}}</p>
+    <p>Aptitudes: {{vacanteempleoService.vacantesel.aptitudes}}</p>
+
+    <h4>sexo:</h4>
+    <p>{{vacanteempleoService.vacantesel.sexo}}</p>
+    <h4>Jornada: </h4>
+    <p>{{vacanteempleoService.vacantesel.jornada}}</p>
+    <h4>Sector:</h4>
+    <p>{{vacanteempleoService.vacantesel.sector}}</p>
+    <h4>Acerca de la empresa:</h4>
+    <p>{{vacanteempleoService.vacantesel.acerca}}</p>
+    <br><br>
+    <p class="mt-5 mb-3 text-muted">&copy; MyJob 2018</p>
+</div>
+</body>
