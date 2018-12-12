@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm,FormBuilder, FormGroup, Validators} from '@angular/forms';
+
+
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+
 import { Key } from 'protractor';
 
 import { Command } from 'selenium-webdriver';
@@ -19,8 +22,12 @@ export class LoginUComponent implements OnInit {
 
   usuarioList: Usuario[];
   resultado: any[];
+
+  formLogin: FormGroup;
+
   constructor(private empleadoService: EmpleadoService, private router: Router,
-    private appcomponent: AppComponent) { }
+    private appcomponent: AppComponent,
+    private fb: FormBuilder) {  this.buildForm();}
 
 
   ngOnInit() {
@@ -30,6 +37,13 @@ export class LoginUComponent implements OnInit {
           this.usuarioList = usuario;
         }
       );
+  }
+
+  buildForm() {
+    this.formLogin = this.fb.group({
+      correo: ['', Validators.compose([Validators.required, Validators.email]) ],
+      contrasenia: ['', Validators.compose([Validators.required, Validators.minLength(3)]) ],
+    });
   }
 
   login(form: NgForm) {

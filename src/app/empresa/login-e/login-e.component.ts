@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, Validator, Validators } from '@angular/forms';
+import { NgForm,FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 
 import { ServicioempService } from '../servicios/servicioemp.service';
 import { Empresa } from '../modelos/empresa';
@@ -19,11 +20,14 @@ export class LoginEComponent implements OnInit {
 
   empresaList: Empresa[];
   resultado: any[];
+
+  formLogin: FormGroup;
   constructor(
+    private fb: FormBuilder,
     private servicioempService: ServicioempService,
     private router: Router, private appComponent: AppComponent
   ) {
-
+      this.buildForm();
   }
 
 
@@ -36,6 +40,12 @@ export class LoginEComponent implements OnInit {
       );
   }
 
+  buildForm() {
+    this.formLogin = this.fb.group({
+      correo: ['', Validators.compose([Validators.required, Validators.email]) ],
+      contrasenia: ['', Validators.compose([Validators.required, Validators.minLength(3)]) ],
+    });
+  }
 
   login(form: NgForm) {
     //console.log(form.value);
